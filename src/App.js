@@ -5,12 +5,15 @@ import List from './components/list'
 
 function App() {
   const [inputText, setInputText] = useState('');
+const [todos, setTodos] = useState([])
+
+
   return (
     <div className="App">
       <header><h1>toBuy</h1></header>
-     <Search setInputText={setInputText}/>
+     <Search inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos}/>
      <p>{inputText}</p>
-     <List/>
+     <List todos={todos}/>
      </div>
   );
 }
